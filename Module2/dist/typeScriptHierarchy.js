@@ -31,14 +31,14 @@ const anotherGreed = () => {
     console.log("Hello Sumona");
     return;
 };
-anotherGreed(); //undefined
-const greetings = anotherGreed();
+// anotherGreed(); //undefined
+// const greetings: void = anotherGreed();
 // Bottom type (never)
 // not possible to assagn
 let nevenHappening;
-const getError = (meg) => {
-    throw new Error(meg);
-};
-const x = getError("abcd");
-const number5 = 14;
 export {};
+// const getError = (meg: string) => {
+//   throw new Error(meg);
+// };
+// const x: string = getError("abcd");
+// const number5: number = 14;

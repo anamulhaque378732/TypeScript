@@ -38,7 +38,7 @@ type Status = "pending" | "Success";
 let someStatus: string;
 let status: Status = "pending";
 
-someStatus =  status;
+someStatus = status;
 
 // unit type
 
@@ -58,9 +58,9 @@ const anotherGreed = (): undefined => {
   console.log("Hello Sumona");
   return;
 };
-anotherGreed(); //undefined
+// anotherGreed(); //undefined
 
-const greetings: void = anotherGreed();
+// const greetings: void = anotherGreed();
 
 // Bottom type (never)
 
@@ -68,9 +68,9 @@ const greetings: void = anotherGreed();
 
 let nevenHappening: never;
 
-const getError = (meg: string) => {
-  throw new Error(meg);
-};
+// const getError = (meg: string) => {
+//   throw new Error(meg);
+// };
 
-const x: string = getError("abcd");
-const number5: number = 14;
+// const x: string = getError("abcd");
+// const number5: number = 14;

@@ -6,3 +6,6 @@ import "./v1-module-config.js";
 import "./union.js";
 import "./typeAliasVsInterfase.js";
 import "./typeScriptHierarchy.js";
+import "./typeAssertion.js";
+import "./narrowingDown.js";
+import "./generic.js";
