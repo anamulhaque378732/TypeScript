@@ -29,20 +29,44 @@ interface Blog {
   date: string;
 }
 
-interface apiResponse<T> {
+interface ApiResponse<T> {
   data: T;
   success: boolean;
   statusCode: number;
+  message: string;
 }
 
-type UserResponse = apiResponse<User>;
-type blogResponse = apiResponse<Blog>;
+type UserResponse = ApiResponse<User>;
+type blogResponse = ApiResponse<Blog>;
 
-const userRes: apiResponse<User> = {
+const userRes: ApiResponse<User> = {
   statusCode: 200,
   success: true,
   data: {
     name: "Anamul",
     role: "Admin",
   },
+  message: "Something Wrong",
 };
+
+const fetchUser = async (): Promise<User | undefined> => {
+  try {
+    const res = await fetch("/api/v1/some-endpoint");
+    const data = (await res.json()) as ApiResponse<User>;
+    if (!res.ok || !data.success) {
+      throw new Error(`Failed fetch user data : ${data.message}`);
+    }
+    return data.data;
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    } else {
+      console.log("Something went wrong");
+    }
+  }
+};
+
+const userData = await fetchUser();
+if (userData) {
+  console.log(userData.name);
+}
