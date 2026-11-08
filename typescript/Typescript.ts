@@ -11,4 +11,4 @@
 
 // 2. Explore 2nd module
 
-// Modules (handle seperate modules) literal type ,   union (basic union ,Literal  union, object union), typerScript Hierarchy
+// Modules (handle seperate modules) literal type ,   union (basic union ,Literal  union, object union), typerScript Hierarchy(any type , unknown type, code type, nulish type, unit type, sub type of void bottom type), type assertion(as, const assertion, non null assertion)  , narrowing down (type of, type guard,truthiness, equality, "in" operator,"instanceof" check,discriminated union) generic , generic promise,
