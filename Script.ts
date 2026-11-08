@@ -97,3 +97,71 @@ const logUserAction = (...args: [name: string, age: number, bool: boolean]) => {
 };
 
 logUserAction("Anamul", 25, true);
+
+// object
+
+const user: {
+  name: string;
+  age: number;
+  isMarried: true;
+  action: () => void;
+} = {
+  name: "Anamul",
+  age: 25,
+  isMarried: true,
+  action: () => {
+    console.log("My name is", user.name, "I am now", user.age, "years old");
+  },
+};
+
+// use type alias to define the object type. It is a good practice to use type alias to define the object type.
+
+type Address = {
+  street: string;
+  city: string;
+  country: string;
+};
+
+type TUser = {
+  name: string;
+  age: number;
+  isMarried: true;
+  action: () => void;
+  address: Address;
+};
+
+// use TUser type alias to define the object type.
+
+const user2: TUser = {
+  name: "Anamul",
+  age: 25,
+  isMarried: true,
+  action: () => {
+    console.log("My name is", user2.name, "I am now", user2.age, "years old");
+  },
+  address: {
+    street: "123 Main St",
+    city: "Dhaka",
+    country: "Bangladesh",
+  },
+};
+
+// user.email="anamul.haque@example.com"; // Error: Property 'email' does not exist on type 'User'.
+
+// user2.address = "Dhaka"; // Error: Property 'address' does not exist on type 'User'.
+
+// use typeinterface to define the object type. It is a good practice to use interface to define the object type.
+
+interface IUser {
+  name: string;
+  age: number;
+  isMarried: true;
+  action: () => void;
+}
+
+//  type alias possible to use but interface is not possible to use.
+type userName = string;
+
+type userI = {
+  name: userName;
+};
