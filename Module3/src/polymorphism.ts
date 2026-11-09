@@ -60,4 +60,4 @@ const manager = new Manager("Sumona", 25400);
 // console.log(manager.calculatePay());
 
 const developer = new Develper("Anamul", 254000, "backed");
-console.log(developer.calculatePay(0.1));
+//console.log(developer.calculatePay(0.1));
